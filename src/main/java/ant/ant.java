@@ -1,31 +1,42 @@
+/*
 package ant;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/9.
- */
+ *//*
+
 import java.util.Random;
+*/
 /**
  *蚂蚁类
  * @author FashionXu
- */
+ *//*
+
 public class ant {
-    /**
+    */
+/**
      * 蚂蚁获得的路径
-     */
+     *//*
+
     public int[]tour;
     //unvisitedcity 取值是0或1，
     //1表示没有访问过，0表示访问过
     int[] unvisitedcity;
-    /**
+    */
+/**
      * 蚂蚁获得的路径长度
-     */
+     *//*
+
     public int tourlength;
     int citys;
-    /**
+    */
+/**
      * 随机分配蚂蚁到某个城市中
      * 同时完成蚂蚁包含字段的初始化工作
      * @param citycount 总的城市数量
-     */
+     *//*
+
     public void RandomSelectCity(int citycount){
         citys=citycount;
         unvisitedcity=new int[citycount];
@@ -41,12 +52,14 @@ public class ant {
         unvisitedcity[firstcity]=0;
         tour[0]=firstcity;
     }
-    /**
+    */
+/**
      * 选择下一个城市
      * @param index 需要选择第index个城市了
      * @param tao   全局的信息素信息
      * @param distance  全局的距离矩阵信息
-     */
+     *//*
+
     public void SelectNextCity(int index,double[][]tao,int[][]distance){
         double []p;
         p=new double[citys];
@@ -87,10 +100,12 @@ public class ant {
         tour[index]=selectcity;
         unvisitedcity[selectcity]=0;
     }
-    /**
+    */
+/**
      * 计算蚂蚁获得的路径的长度
      * @param distance  全局的距离矩阵信息
-     */
+     *//*
+
     public void CalTourLength(int [][]distance){
         tourlength=0;
         tour[citys]=tour[0];
@@ -99,3 +114,4 @@ public class ant {
         }
     }
 }
+*/

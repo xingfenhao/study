@@ -1,13 +1,18 @@
+/*
 package ant;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/9.
- */
+ *//*
+
 import java.io.*;
+*/
 /**
  *蚁群优化算法，用来求解TSP问题
  * @author FashionXu
- */
+ *//*
+
 public class ACO {
     //定义蚂蚁群
     ant []ants;
@@ -17,11 +22,13 @@ public class ACO {
     int citycount;//城市数量
     int[]besttour;//求解的最佳路径
     int bestlength;//求的最优解的长度
-    /** 初始化函数
+    */
+/** 初始化函数
      *@param filename tsp数据文件
      *@param antnum 系统用到蚂蚁的数量
      *@throws 如果文件不存在则抛出异常
-     */
+     *//*
+
     public void init(String filename,int antnum) throws FileNotFoundException, IOException{
         antcount=antnum;
         ants=new ant[antcount];
@@ -67,11 +74,13 @@ public class ACO {
             ants[i].RandomSelectCity(citycount);
         }
     }
-    /**
+    */
+/**
      * ACO的运行过程
      * @param maxgen ACO的最多循环次数
      *
-     */
+     *//*
+
     public void run(int maxgen){
         for(int runtimes=0;runtimes<maxgen;runtimes++){
             //每一只蚂蚁移动的过程
@@ -97,9 +106,11 @@ public class ACO {
             }
         }
     }
-    /**
+    */
+/**
      * 更新信息素矩阵
-     */
+     *//*
+
     private void UpdateTao(){
         double rou=0.5;
         //信息素挥发
@@ -113,10 +124,13 @@ public class ACO {
             }
         }
     }
-    /**
+    */
+/**
      * 输出程序运行结果
-     */
+     *//*
+
     public void ReportResult(){
         System.out.println("最优路径长度是"+bestlength);
     }
 }
+*/
