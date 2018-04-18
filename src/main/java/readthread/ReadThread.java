@@ -1,18 +1,23 @@
+/*
 package readthread;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/15.
- */
+ *//*
+
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.concurrent.CountDownLatch;
 
+*/
 /**
  * 这个线程用来读取文件，当获取到指定关键字时，在指定的对象加1
  * @author 刘峰管理2
  *
- */
+ *//*
+
 public class ReadThread extends Thread{
 
     //定义字节数组（取水的竹筒）的长度
@@ -27,10 +32,12 @@ public class ReadThread extends Thread{
     private String keywords;
     //此线程读到关键字的次数
     private int curCount = 0;
-    /**
+    */
+/**
      * jdk1.5开始加入的类，是个多线程辅助类
      * 用于多线程开始前统一执行操作或者多线程执行完成后调用主线程执行相应操作的类
-     */
+     *//*
+
     private CountDownLatch doneSignal;
     public ReadThread(long start, long end, RandomAccessFile raf,String keywords,CountDownLatch doneSignal){
         this.start = start;
@@ -121,3 +128,4 @@ public class ReadThread extends Thread{
         this.doneSignal = doneSignal;
     }
 }
+*/

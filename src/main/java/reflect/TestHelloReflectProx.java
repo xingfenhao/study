@@ -1,12 +1,15 @@
+/*
 package reflect;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/20.
- */
+ *//*
+
 public class TestHelloReflectProx {
     public static void main(String[] args) {
         //代理工具
@@ -63,4 +66,4 @@ class MyInvocationHandler1 implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         return method.invoke(this.obj, args);
     }
-}
+}*/

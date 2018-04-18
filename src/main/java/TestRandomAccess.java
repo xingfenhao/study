@@ -1,11 +1,14 @@
+/*
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+*/
 /**
  * Created by xingfenhao on 2017/2/10.
- */
+ *//*
+
 public class TestRandomAccess {
 
 public static void  main(String[] agrs)
@@ -64,3 +67,4 @@ public static void  main(String[] agrs)
     }
 
 }
+*/

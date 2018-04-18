@@ -11,50 +11,50 @@ public class TestReflect implements Serializable {
     public static void main(String[] args) throws Exception {
        /* TestReflect testReflect = new TestReflect();
         System.out.println(testReflect.getClass().getName());*/
-        // ç»“æœ reflect.TestReflect
+        // ½á¹û reflect.TestReflect
 
 
-        //å®ä¾‹åŒ–classå¯¹è±¡
+        //ÊµÀı»¯class¶ÔÏó
 
        /* Class<?> class1 = null;
         Class<?> class2 = null;
         Class<?> class3 = null;
-        // ä¸€èˆ¬é‡‡ç”¨è¿™ç§å½¢å¼
+        // Ò»°ã²ÉÓÃÕâÖÖĞÎÊ½
         class1 = Class.forName("reflect.TestReflect");
         class2 = new TestReflect().getClass();
         class3 = TestReflect.class;
-        System.out.println("ç±»åç§°   " + class1.getName());
-        System.out.println("ç±»åç§°   " + class2.getName());
-        System.out.println("ç±»åç§°   " + class3.getName());*/
+        System.out.println("ÀàÃû³Æ   " + class1.getName());
+        System.out.println("ÀàÃû³Æ   " + class2.getName());
+        System.out.println("ÀàÃû³Æ   " + class3.getName());*/
 
 
-        //è·å–ä¸€ä¸ªå¯¹è±¡çš„çˆ¶ç±»ä¸å®ç°çš„æ¥å£
+        //»ñÈ¡Ò»¸ö¶ÔÏóµÄ¸¸ÀàÓëÊµÏÖµÄ½Ó¿Ú
        /* Class<?> clazz = Class.forName("reflect.TestReflect");
-        // å–å¾—çˆ¶ç±»
+        // È¡µÃ¸¸Àà
         Class<?> parentClass = clazz.getSuperclass();
-        System.out.println("clazzçš„çˆ¶ç±»ä¸ºï¼š" + parentClass.getName());
-        // clazzçš„çˆ¶ç±»ä¸ºï¼š java.lang.Object
-        // è·å–æ‰€æœ‰çš„æ¥å£
+        System.out.println("clazzµÄ¸¸ÀàÎª£º" + parentClass.getName());
+        // clazzµÄ¸¸ÀàÎª£º java.lang.Object
+        // »ñÈ¡ËùÓĞµÄ½Ó¿Ú
         Class<?> intes[] = clazz.getInterfaces();
-        System.out.println("clazzå®ç°çš„æ¥å£æœ‰ï¼š");
+        System.out.println("clazzÊµÏÖµÄ½Ó¿ÚÓĞ£º");
         for (int i = 0; i < intes.length; i++) {
-            System.out.println((i + 1) + "ï¼š" + intes[i].getName());
+            System.out.println((i + 1) + "£º" + intes[i].getName());
         }*/
-        // clazzå®ç°çš„æ¥å£æœ‰ï¼š
-        // 1ï¼šjava.io.Serializable
+        // clazzÊµÏÖµÄ½Ó¿ÚÓĞ£º
+        // 1£ºjava.io.Serializable
 
-//é€šè¿‡åå°„æœºåˆ¶å®ä¾‹åŒ–ä¸€ä¸ªç±»çš„å¯¹è±¡
+//Í¨¹ı·´Éä»úÖÆÊµÀı»¯Ò»¸öÀàµÄ¶ÔÏó
         Class<?> class1 = null;
         class1 = Class.forName("reflect.User");
-        // ç¬¬ä¸€ç§æ–¹æ³•ï¼Œå®ä¾‹åŒ–é»˜è®¤æ„é€ æ–¹æ³•ï¼Œè°ƒç”¨setèµ‹å€¼
+        // µÚÒ»ÖÖ·½·¨£¬ÊµÀı»¯Ä¬ÈÏ¹¹Ôì·½·¨£¬µ÷ÓÃset¸³Öµ
         User user = (User) class1.newInstance();
         user.setAge(20);
         user.setName("Rollen");
         System.out.println(user);
-        // ç»“æœ User [age=20, name=Rollen]
-        // ç¬¬äºŒç§æ–¹æ³• å–å¾—å…¨éƒ¨çš„æ„é€ å‡½æ•° ä½¿ç”¨æ„é€ å‡½æ•°èµ‹å€¼
+        // ½á¹û User [age=20, name=Rollen]
+        // µÚ¶şÖÖ·½·¨ È¡µÃÈ«²¿µÄ¹¹Ôìº¯Êı Ê¹ÓÃ¹¹Ôìº¯Êı¸³Öµ
         Constructor<?> cons[] = class1.getConstructors();
-        // æŸ¥çœ‹æ¯ä¸ªæ„é€ æ–¹æ³•éœ€è¦çš„å‚æ•°
+        // ²é¿´Ã¿¸ö¹¹Ôì·½·¨ĞèÒªµÄ²ÎÊı
         for (int i = 0; i < cons.length; i++) {
             Class<?> clazzs[] = cons[i].getParameterTypes();
             System.out.print("cons[" + i + "] (");
@@ -66,16 +66,16 @@ public class TestReflect implements Serializable {
             }
             System.out.println(")");
         }
-        // ç»“æœ
+        // ½á¹û
         // cons[0] (java.lang.String)
         // cons[1] (int,java.lang.String)
         // cons[2] ()
         user = (User) cons[0].newInstance("Rollen");
         System.out.println(user);
-        // ç»“æœ User [age=0, name=Rollen]
+        // ½á¹û User [age=0, name=Rollen]
         user = (User) cons[1].newInstance(20, "Rollen");
         System.out.println(user);
-        // ç»“æœ User [age=20, name=Rollen]
+        // ½á¹û User [age=20, name=Rollen]
 
     }
 }

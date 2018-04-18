@@ -31,38 +31,38 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.9</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>poi-excelant</groupId>
-            <artifactId>poi-excelant</artifactId>
-            <version>3.8</version>
-            <type>pom</type>
-        </dependency>
+        <!-- <dependency>
+             <groupId>poi</groupId>
+             <artifactId>poi</artifactId>
+             <version>3.9</version>
+             <type>pom</type>
+         </dependency>
+         <dependency>
+             <groupId>poi-excelant</groupId>
+             <artifactId>poi-excelant</artifactId>
+             <version>3.8</version>
+             <type>pom</type>
+         </dependency>
 
-        <dependency>
-            <groupId>poi-ooxml</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.9</version>
-            <type>pom</type>
-        </dependency>
+         <dependency>
+             <groupId>poi-ooxml</groupId>
+             <artifactId>poi-ooxml</artifactId>
+             <version>3.9</version>
+             <type>pom</type>
+         </dependency>
 
-        <dependency>
-            <groupId>poi-ooxml-schemas</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
-            <version>3.9</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>poi-scratchpad</groupId>
-            <artifactId>poi-scratchpad</artifactId>
-            <version>3.9</version>
-            <type>pom</type>
-        </dependency>
+         <dependency>
+             <groupId>poi-ooxml-schemas</groupId>
+             <artifactId>poi-ooxml-schemas</artifactId>
+             <version>3.9</version>
+             <type>pom</type>
+         </dependency>
+         <dependency>
+             <groupId>poi-scratchpad</groupId>
+             <artifactId>poi-scratchpad</artifactId>
+             <version>3.9</version>
+             <type>pom</type>
+         </dependency>-->
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
@@ -82,6 +82,35 @@
             <version>2.5.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-metrics-event-stream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

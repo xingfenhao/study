@@ -1,11 +1,16 @@
+/*
 package readthread;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/15.
- */
+ *//*
+
+*/
 /**
  * 统计关键字的对象
- */
+ *//*
+
 
 public class KeyWordsCount {
 
@@ -36,4 +41,4 @@ public class KeyWordsCount {
         this.count = count;
     }
 
-}
+}*/

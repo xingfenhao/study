@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/task   
+		   http://www.springframework.org/schema/task/spring-task-3.0.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/context "
+	   default-autowire="byName">
+
+	<task:annotation-driven/>
+
+	<!-- 消息线程执行器 -->
+	<bean id="notifyThreadExecutor"
+		  class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="5"/>
+		<property name="maxPoolSize" value="20"/>
+		<property name="allowCoreThreadTimeOut" value="true"/>
+		<property name="queueCapacity" value="5"/>
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy"/>
+		</property>
+	</bean>
+
+	<!--放款提现定时-->
+	<bean id="loanTask" class="com.yylc.entrustmer.biz.task.LoanTask"/>
+
+	<!-- 转账回查-->
+	<bean id="transferReCheckTask" class="com.yylc.entrustmer.biz.task.TransferReCheckTask"/>
+
+	<!-- 临时还款计划预冻结定时-->
+	<bean id="tmpRepayPlanPreFreezeTask" class="com.yylc.entrustmer.biz.task.TmpRepayPlanPreFreezeTask"/>
+	<!-- 还款计划预冻结定时-->
+	<bean id="repayPlanPreFreezeTask" class="com.yylc.entrustmer.biz.task.RepayPlanPreFreezeTask"/>
+	<!-- 逾期还款-->
+	<bean id="repayEntrustTask" class="com.yylc.entrustmer.biz.task.RepayEntrustTask"/>
+	<!-- 逾期还款-非存管-->
+	<bean id="repayEntrustPlTask" class="com.yylc.entrustmer.biz.task.RepayEntrustPlTask"/>
+	<!--合作商分润task-->
+	<bean id="partnerShareTask" class="com.yylc.entrustmer.biz.task.PartnerShareTask"/>
+	<!--对账文件下载-->
+	<bean id="reconFileTask" class="com.yylc.entrustmer.biz.task.ReconFileTask"/>
+	<!--打款划拨充值回查定时-->
+	<bean id="fundsTransferReCheckTask" class="com.yylc.entrustmer.biz.task.FundsTransferReCheckTask"/>
+	<!--业务报警定时-->
+	<bean id="alertTask" class="com.yylc.entrustmer.biz.task.AlertTask"/>
+
+	<!-- 自定义根据接口来实例一个BEAN,配置池大小5个, 可以根据实时任务多少来配置池中线程量-->
+	<bean id="schedulerTask" class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
+		<property name="poolSize" value="6"/>
+	</bean>
+
+	<task:scheduled-tasks scheduler="schedulerTask">
+		<!-- 转账回查 30秒执行一次 -->
+		<task:scheduled ref="transferReCheckTask" method="execute" cron="0/30 * * * * ? "/>
+
+		<!-- 临时还款计划预冻结1分钟执行一次 -->
+		<task:scheduled ref="tmpRepayPlanPreFreezeTask" method="execute" cron="3 0/1 * * * ?"/>
+		<!-- 还款计划预冻结1分钟执行一次 -->
+		<task:scheduled ref="repayPlanPreFreezeTask" method="execute" cron="3 0/1 * * * ?"/>
+		<!-- 逾期还款2分钟执行一次 -->
+		<task:scheduled ref="repayEntrustTask" method="execute" cron="11 0/2 17,18,19,20,21,22,23 * * ?"/>
+		<!-- 逾期还款3分钟执行一次 -->
+		<task:scheduled ref="repayEntrustPlTask" method="execute" cron="11 0/3 * * * ?"/>
+
+		<!-- (部分放款提现)3分钟执行一次 -->
+		<task:scheduled ref="loanTask" method="execute" cron="7 0/3 * * * ?"/>
+		<!-- 合作商分润 3分钟执行一次 -->
+		<task:scheduled ref="partnerShareTask" method="execute" cron="17 0/3 * * * ?"/>
+		<!--打款划拨充值回查定时3分钟执行一次 -->
+		<task:scheduled ref="fundsTransferReCheckTask" method="execute" cron="13 0/3 * * * ?"/>
+
+		<!--凌晨3点-6点执行一次 -->
+		<task:scheduled ref="reconFileTask" method="execute" cron="5 0 3,4,5,6 * * ?"/>
+		<!--10分钟执行一次 -->
+		<task:scheduled ref="alertTask" method="execute" cron="3 0/10 * * * ?"/>
+	</task:scheduled-tasks>
+
+	<!-- 监控运行的定时器 -->
+	<bean id="monitorRunTask" class="com.yylc.entrustmer.biz.task.MonitorRunTask" init-method="init">
+		<property name="runTaskList">
+			<list>
+				<ref bean="transferReCheckTask"/>
+
+				<ref bean="repayPlanPreFreezeTask"/>
+				<ref bean="repayEntrustTask"/>
+				<ref bean="repayEntrustPlTask"/>
+
+				<ref bean="loanTask"/>
+				<ref bean="partnerShareTask"/>
+				<ref bean="reconFileTask"/>
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,3 +1,4 @@
+/*
 package threadpool;
 
 import java.io.IOException;
@@ -7,9 +8,11 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/14.
- */
+ *//*
+
 public class CyclicBarrierTest {
 
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -49,4 +52,4 @@ class Runner22 implements Runnable {
         }
         System.out.println(name + " 起跑！");
     }
-}
+}*/

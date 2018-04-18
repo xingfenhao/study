@@ -1,11 +1,14 @@
+/*
 package reflect;
 
 import java.io.*;
 import java.util.Properties;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/20.
- */
+ *//*
+
 public class TestHelloReflecFactory {
     public static void main(String[] a) throws   IOException{
         Properties pro=init.getPro();
@@ -57,4 +60,4 @@ class Factory{
         }
         return f;
     }
-}
+}*/

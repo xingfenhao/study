@@ -1,3 +1,4 @@
+/*
 package randomAccessfile;
 
 import java.io.File;
@@ -5,9 +6,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.RandomAccessFile;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/15.
- */
+ *//*
+
 public class RandomAccessFileTest {
 
 
@@ -21,22 +24,26 @@ public class RandomAccessFileTest {
     }
 
 
-    /**
+    */
+/**
      * 读的方法
      * @param path 文件路径
      * @param pointe 指针位置
-     * **/
+     * **//*
+
     public static void randomRed(String path,int pointe){
         try{
             //RandomAccessFile raf=new RandomAccessFile(new File("D:\\3\\test.txt"), "r");
-            /**
+            */
+/**
              * model各个参数详解
              * r 代表以只读方式打开指定文件
              * rw 以读写方式打开指定文件
              * rws 读写方式打开，并对内容或元数据都同步写入底层存储设备
              * rwd 读写方式打开，对文件内容的更新同步更新至底层存储设备
              *
-             * **/
+             * **//*
+
             RandomAccessFile raf=new RandomAccessFile(path, "r");
             //获取RandomAccessFile对象文件指针的位置，初始位置是0
             System.out.println("RandomAccessFile文件指针的初始位置:"+raf.getFilePointer());
@@ -65,14 +72,18 @@ public class RandomAccessFileTest {
 
 
 
-    /**
+    */
+/**
      * 追加方式
      * 写的方法
      * @param path 文件路径
-     * ***/
+     * ***//*
+
     public static void randomWrite(String path){
         try{
-            /**以读写的方式建立一个RandomAccessFile对象**/
+            */
+/**以读写的方式建立一个RandomAccessFile对象**//*
+
             RandomAccessFile raf=new RandomAccessFile(path, "rw");
 
             //将记录指针移动到文件最后
@@ -88,13 +99,15 @@ public class RandomAccessFileTest {
 
 
 
-    /**
+    */
+/**
      * 实现向指定位置
      * 插入数据
      * @param fileName 文件名
      * @param points 指针位置
      * @param insertContent 插入内容
-     * **/
+     * **//*
+
     public static void insert(String fileName,long points,String insertContent){
         try{
             File tmp=File.createTempFile("tmp", null);
@@ -105,7 +118,9 @@ public class RandomAccessFileTest {
             FileOutputStream tmpOut=new FileOutputStream(tmp);
             FileInputStream tmpIn=new FileInputStream(tmp);
             raf.seek(points);
-            /**将插入点后的内容读入临时文件夹**/
+            */
+/**将插入点后的内容读入临时文件夹**//*
+
 
             byte [] buff=new byte[1024];
             //用于保存临时读取的字节数
@@ -129,3 +144,4 @@ public class RandomAccessFileTest {
         }
     }
 }
+*/

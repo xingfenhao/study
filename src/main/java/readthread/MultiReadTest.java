@@ -1,19 +1,24 @@
+/*
 package readthread;
 
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.concurrent.CountDownLatch;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/15.
- */
+ *//*
+
 
 public class MultiReadTest {
 
-    /**
+    */
+/**
      * 多线程读取文件测试
      * @param args
-     */
+     *//*
+
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         final int DOWN_THREAD_NUM = 10;//起10个线程去读取指定文件
@@ -73,4 +78,4 @@ public class MultiReadTest {
         System.out.println("指定关键字出现的次数："+k.getCount());
     }
 
-}
+}*/

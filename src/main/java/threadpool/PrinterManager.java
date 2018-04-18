@@ -1,3 +1,4 @@
+/*
 package threadpool;
 
 import com.sun.org.apache.xml.internal.serialize.Printer;
@@ -7,9 +8,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/14.
- */
+ *//*
+
 
 public class PrinterManager {
     private final Semaphore semaphore;
@@ -41,3 +44,4 @@ public class PrinterManager {
         printers.add(printer);
     }
 }
+*/

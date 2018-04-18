@@ -1,13 +1,16 @@
+/*
 package reflect;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/20.
  * 获取某个类的全部属性
- */
+ *//*
+
 public class TestReflectAllType  extends TestReflect {
 
     private static final long serialVersionUID = -2862585049955236662L;
@@ -38,3 +41,4 @@ public class TestReflectAllType  extends TestReflect {
         }
     }
 }
+*/

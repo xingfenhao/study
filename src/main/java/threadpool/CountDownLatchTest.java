@@ -1,12 +1,15 @@
+/*
 package threadpool;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+*/
 /**
  * Created by xingfenhao on 2017/3/14.
- */
+ *//*
+
 public class CountDownLatchTest {
 
     // 模拟了100米赛跑，10名选手已经准备就绪，只等裁判一声令下。当所有人都到达终点时，比赛结束。
@@ -50,6 +53,7 @@ public class CountDownLatchTest {
     }
 }
 
+*/
 /*
 使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断或超出了指定的等待时间。如果当前计数为零，则此方法立刻返回 true 值。
 
@@ -76,5 +80,7 @@ public class CountDownLatchTest {
         返回：
         如果计数到达零，则返回 true；如果在计数到达零之前超过了等待时间，则返回 false
         抛出：
-        InterruptedException - 如果当前线程在等待时被中断*/
+        InterruptedException - 如果当前线程在等待时被中断*//*
 
+
+*/

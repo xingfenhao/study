@@ -10,4 +10,6 @@ public class TestHashSet {
        Set a1 = new HashSet();
         System.out.println(a1.add("adadf"));
     }
+
+    public void get(){return; }
 }
