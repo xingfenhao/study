@@ -18,28 +18,26 @@ public class TestHystrix {
     public static int j = 0;
     public static List list = new ArrayList(100);
 
-    public static void main(String[] agrs)
-    {
-        ExecutorService executorService =   Executors.newFixedThreadPool(100);
-         int i = 1000000000;
+    public static void main(String[] agrs) {
+        ExecutorService executorService = Executors.newFixedThreadPool(100);
+        int i = 1000000000;
         List list = new ArrayList();
 
-         for(int j=0;j<i;j++)
-         {
-             executorService.execute(new HystrixThread(j));         }
+        for (int j = 0; j < i; j++) {
+            executorService.execute(new HystrixThread(j));
+        }
     }
 
-   static class HystrixThread implements Runnable{
+    static class HystrixThread implements Runnable {
 
 
         @Override
         public void run() {
-            if(j%999 == 1)
-            System.out.println(Thread.currentThread().getName()+"="+j);
+            if (j % 999 == 1)
+                System.out.println(Thread.currentThread().getName() + "=" + j);
         }
 
-        public HystrixThread( int j)
-        {
+        public HystrixThread(int j) {
             TestHystrix.j = j;
             TestHystrix.list.add(j);
         }

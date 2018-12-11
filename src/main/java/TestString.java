@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by xingfenhao on 2017/2/15.
@@ -18,5 +19,10 @@ public class TestString {
         BigDecimal a11 = new BigDecimal(-1);
         System.out.println(a11);
         System.out.println(a11.abs());
+
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr0 = dateformat.format(System.currentTimeMillis());
+        String dateStr1 = dateformat.format(System.currentTimeMillis()+5000);
+        System.out.print(dateStr0+"        "+dateStr1);
     }
 }

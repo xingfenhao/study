@@ -1,11 +1,11 @@
 /**
  * yingyinglicai.com Inc.
  * Copyright (c) 2013-2018 All Rights Reserved.
- */
+ *//*
+
 package hystrix;
 
 import com.netflix.hystrix.HystrixCommandGroupKey;
-import com.netflix.hystrix.HystrixObservableCommand;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
@@ -14,10 +14,12 @@ import rx.functions.Action1;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+*/
 /**
  * @author fenghao.xing
  * @version : HelloWorldHystrixObservableCommand.java, v 0.1 2018-04-16 20:57 fenhao.xing Exp $
- */
+ *//*
+
 public class HelloWorldHystrixObservableCommand extends HystrixObservableCommand<String> {
 
     private final String name;
@@ -143,14 +145,16 @@ public class HelloWorldHystrixObservableCommand extends HystrixObservableCommand
         // 非堵塞
         // - also verbose anonymous inner-class
         // - ignore errors and onCompleted signal
-        /*coldObservable.subscribe(new Action1<String>() {
+        */
+/*coldObservable.subscribe(new Action1<String>() {
 
             public void call(String v) {
                 // 相当于上面的onNext()
                 // @Override
                 System.out.println("coldObservable call: " + v);
                 }
-        });*/
+        });*//*
+
         // 主线程不直接退出，在此一直等待其他线程执行
         System.in.read();
 
@@ -173,3 +177,4 @@ public class HelloWorldHystrixObservableCommand extends HystrixObservableCommand
         });
     }
 }
+*/
