@@ -1,0 +1,29 @@
+package drools
+
+import drools.Employ;
+
+
+
+
+rule "Total"
+
+   ruleflow-group "sum_salary"
+
+
+when
+
+   emp: Employ()
+
+then
+
+   System.out.println( "exec rule Total ... " );
+
+   double total = emp.getBasicSalary() +  emp.getDutySalary() +
+
+
+                  emp.getBonus();
+
+   emp.setTotalSalary(total*emp.getPercent());
+
+end
+

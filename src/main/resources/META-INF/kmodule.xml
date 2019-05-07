@@ -1,0 +1,28 @@
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+
+    <!--积分-->
+    <kbase name="point-rulesKB" packages="rules">
+        <ksession name="point-rulesKS"/>
+    </kbase>
+
+    <!--小明买饮料-->
+    <kbase name="mingKB" packages="rules">
+        <ksession name="mingKS"/>
+    </kbase>
+
+    <!--高尔夫队员站队-->
+    <kbase name="golferKB" packages="rules">
+        <ksession name="golferKS"/>
+    </kbase>
+
+    <!--九宫格计算-->
+    <kbase name="gridNumKB" packages="rules">
+        <ksession name="gridNumKS"/>
+    </kbase>
+
+    <!--helloworld-->
+    <kbase name="helloWorldKB" packages="rules">
+        <ksession name="HelloWorldKS"/>
+    </kbase>
+</kmodule>
