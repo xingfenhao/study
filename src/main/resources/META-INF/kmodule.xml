@@ -25,4 +25,9 @@
     <kbase name="helloWorldKB" packages="rules">
         <ksession name="HelloWorldKS"/>
     </kbase>
+
+    <!--雇员-->
+    <kbase name="employKB" packages="rules">
+        <ksession name="employKS"/>
+    </kbase>
 </kmodule>
